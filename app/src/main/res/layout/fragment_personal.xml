@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PersonalFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <TextView
+            android:id="@+id/instruction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Click on icon to search"
+            app:layout_constraintBottom_toTopOf="@id/searchBox"
+            app:layout_constraintEnd_toEndOf="@id/searchBox"
+            app:layout_constraintStart_toStartOf="@id/searchBox"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/searchBox"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:clickable="false"
+            android:contextClickable="false"
+            android:imeOptions="normal|actionSearch"
+            android:inputType="text"
+            android:queryHint="Search..."
+            app:hideNavigationIcon="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/filters_removebg_preview"
+            app:layout_constraintBottom_toBottomOf="@id/searchBox"
+            app:layout_constraintStart_toEndOf="@id/searchBox"
+            app:layout_constraintTop_toTopOf="@id/searchBox" />
+
+
+        <ImageView
+            android:id="@+id/exploreCartoon"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchBox"
+            app:layout_constraintVertical_bias="0.211"
+            app:srcCompat="@drawable/explore" />
+
+        <LinearLayout
+            android:id="@+id/exploreListIsEmptyTextLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/exploreCartoon"
+            app:layout_constraintStart_toStartOf="@id/exploreCartoon"
+            app:layout_constraintTop_toBottomOf="@+id/exploreCartoon">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your explore list is"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5sp"
+                android:text="EMPTY"
+                android:textColor="@android:color/holo_orange_light"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/sorryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Sorry, we could not find any user near you."
+            android:textColor="@color/material_dynamic_neutral70"
+            app:layout_constraintEnd_toEndOf="@id/exploreListIsEmptyTextLayout"
+            app:layout_constraintStart_toStartOf="@id/exploreListIsEmptyTextLayout"
+            app:layout_constraintTop_toBottomOf="@id/exploreListIsEmptyTextLayout" />
+        <TextView
+            android:id="@+id/increaseRadiusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Try increasing your searcch radius."
+            android:textColor="@color/material_dynamic_neutral70"
+            app:layout_constraintEnd_toEndOf="@id/sorryText"
+            app:layout_constraintStart_toStartOf="@id/sorryText"
+            app:layout_constraintTop_toBottomOf="@id/sorryText" />
+
+
+        <Button
+            android:id="@+id/increaseRadiusButton"
+            android:layout_width="260dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:text="INCREASE RADIUS"
+            app:layout_constraintEnd_toEndOf="@id/increaseRadiusText"
+            app:layout_constraintStart_toStartOf="@id/increaseRadiusText"
+            app:layout_constraintTop_toBottomOf="@id/increaseRadiusText" />
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

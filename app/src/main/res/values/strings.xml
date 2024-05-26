@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Netclan Explore UI</string>
+
+    <!--    Bottom Navigation View Strings-->
+    <string name="explore">Explore</string>
+    <string name="refine">Refine</string>
+    <string name="search_hint">Search</string>
+
+
+</resources>
