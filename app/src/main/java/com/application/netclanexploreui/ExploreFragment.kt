@@ -46,8 +46,6 @@ class ExploreFragment : Fragment() {
                 else -> ""
             }
         }.attach()
-
-
         return binding.root
     }
 }
