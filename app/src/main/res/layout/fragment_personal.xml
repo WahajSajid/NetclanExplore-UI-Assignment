@@ -129,6 +129,241 @@
 
 
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fabConstraint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/mainFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
+                app:backgroundTint="@color/material_dynamic_primary20"
+                android:tint="@color/material_dynamic_primary20"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/baseline_add_24"
+                app:tint="@color/white" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/notesFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/mainFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/mainFabBtn"
+                app:srcCompat="@drawable/baseline_edit_note_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/notesTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Notes"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/notesFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/notesFabBtn"
+                app:layout_constraintTop_toTopOf="@id/notesFabBtn" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/jobsFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light" app:backgroundTint="@android:color/holo_orange_light"    android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:layout_constraintBottom_toTopOf="@id/notesFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/notesFabBtn"
+                app:srcCompat="@drawable/baseline_shopping_bag_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/jobsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Jobs"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/jobsFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/jobsFabBtn"
+                app:layout_constraintTop_toTopOf="@id/jobsFabBtn" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/netClanGroupsFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toTopOf="@id/jobsFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/jobsFabBtn"
+                app:srcCompat="@drawable/baseline_groups_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/netClanGroupsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Netclan Groups"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/netClanGroupsFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/netClanGroupsFabBtn"
+                app:layout_constraintTop_toTopOf="@id/netClanGroupsFabBtn" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/businessCardsFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toTopOf="@id/netClanGroupsFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/netClanGroupsFabBtn"
+                app:srcCompat="@drawable/baseline_credit_card_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/businessCardsTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Business Cards"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/businessCardsFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/businessCardsFabBtn"
+                app:layout_constraintTop_toTopOf="@id/businessCardsFabBtn" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/buySellRentFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toTopOf="@id/businessCardsFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/businessCardsFabBtn"
+                app:srcCompat="@drawable/baseline_sell_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/buySellRentTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Buy-Sell-Rent"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/buySellRentFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/buySellRentFabBtn"
+                app:layout_constraintTop_toTopOf="@id/buySellRentFabBtn" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/matriMoneyFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toTopOf="@id/buySellRentFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/buySellRentFabBtn"
+                app:srcCompat="@drawable/baseline_animation_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/matriMoneyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Matrimony"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/matriMoneyFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/matriMoneyFabBtn"
+                app:layout_constraintTop_toTopOf="@id/matriMoneyFabBtn" />
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/datingFabBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:backgroundTint="@android:color/holo_orange_light"
+                android:tint="@android:color/holo_orange_light"
+                android:visibility="visible"
+                app:backgroundTint="@android:color/holo_orange_light"
+                app:layout_constraintBottom_toTopOf="@id/matriMoneyFabBtn"
+                app:layout_constraintEnd_toEndOf="@id/matriMoneyFabBtn"
+                app:srcCompat="@drawable/baseline_heart_broken_24"
+                app:tint="@color/material_dynamic_primary20" />
+
+            <TextView
+                android:id="@+id/datingTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:paddingHorizontal="32dp"
+                android:paddingVertical="8dp"
+                android:text="Dating"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/datingFabBtn"
+                app:layout_constraintEnd_toStartOf="@id/datingFabBtn"
+                app:layout_constraintTop_toTopOf="@id/datingFabBtn" />
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
