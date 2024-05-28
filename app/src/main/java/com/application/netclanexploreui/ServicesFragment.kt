@@ -1,59 +1,95 @@
 package com.application.netclanexploreui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
+import androidx.databinding.DataBindingUtil
+import com.application.netclanexploreui.databinding.FragmentServicesBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ServicesFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ServicesFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding:FragmentServicesBinding
+    private var isExpanded = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private val fromBottomFabAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.from_bottom_fab)
+    }
+    private val toBottomFabAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.to_bottom_fab)
+    }
+    private val rotateClockWiseFabAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.clock_wise)
+    }
+    private val rotateAntiClockWiseFabAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.anti_clock_wise)
+    }
+    private val fromBottomBgAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.from_bottom_anim)
+    }
+    private val toBottomBgAnim: Animation by lazy {
+        AnimationUtils.loadAnimation(context, R.anim.to_bottom_anim)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_services, container, false)
+       binding = DataBindingUtil.inflate(inflater,R.layout.fragment_services, container, false)
+
+        view?.setFocusableInTouchMode(true)
+        view?.requestFocus()
+        binding.mainFabBtn.setOnClickListener {
+            if(isExpanded) shrinkFab()
+            else expandFab()
+        }
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ServicesFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ServicesFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    @SuppressLint("ResourceAsColor")
+    private fun shrinkFab(){
+        binding.transparentBg.visibility = View.GONE
+        binding.mainFabBtn.startAnimation(rotateAntiClockWiseFabAnim)
+        binding.notesFabBtn.startAnimation(toBottomFabAnim)
+        binding.jobsFabBtn.startAnimation(toBottomFabAnim)
+        binding.netClanGroupsFabBtn.startAnimation(toBottomFabAnim)
+        binding.businessCardsFabBtn.startAnimation(toBottomFabAnim)
+        binding.buySellRentFabBtn.startAnimation(toBottomFabAnim)
+        binding.matriMoneyFabBtn.startAnimation(toBottomFabAnim)
+        binding.datingFabBtn.startAnimation(toBottomFabAnim)
+        binding.notesTv.startAnimation(toBottomFabAnim)
+        binding.jobsTv.startAnimation(toBottomFabAnim)
+        binding.netClanGroupsTv.startAnimation(toBottomFabAnim)
+        binding.businessCardsTv.startAnimation(toBottomFabAnim)
+        binding.buySellRentTv.startAnimation(toBottomFabAnim)
+        binding.matriMoneyTv.startAnimation(toBottomFabAnim)
+        binding.datingTv.startAnimation(toBottomFabAnim)
+        isExpanded = !isExpanded
     }
+    @SuppressLint("ResourceAsColor")
+    private fun expandFab(){
+        binding.transparentBg.visibility = View.VISIBLE
+        binding.mainFabBtn.startAnimation(rotateClockWiseFabAnim)
+        binding.notesFabBtn.startAnimation(fromBottomFabAnim)
+        binding.jobsFabBtn.startAnimation(fromBottomFabAnim)
+        binding.netClanGroupsFabBtn.startAnimation(fromBottomFabAnim)
+        binding.businessCardsFabBtn.startAnimation(fromBottomFabAnim)
+        binding.buySellRentFabBtn.startAnimation(fromBottomFabAnim)
+        binding.matriMoneyFabBtn.startAnimation(fromBottomFabAnim)
+        binding.datingFabBtn.startAnimation(fromBottomFabAnim)
+        binding.notesTv.startAnimation(fromBottomFabAnim)
+        binding.jobsTv.startAnimation(fromBottomFabAnim)
+        binding.netClanGroupsTv.startAnimation(fromBottomFabAnim)
+        binding.businessCardsTv.startAnimation(fromBottomFabAnim)
+        binding.buySellRentTv.startAnimation(fromBottomFabAnim)
+        binding.matriMoneyTv.startAnimation(fromBottomFabAnim)
+        binding.datingTv.startAnimation(fromBottomFabAnim)
+        isExpanded = !isExpanded
+    }
+
 }
