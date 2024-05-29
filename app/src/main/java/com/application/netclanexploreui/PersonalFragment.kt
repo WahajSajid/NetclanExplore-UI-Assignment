@@ -15,6 +15,8 @@ class PersonalFragment : Fragment() {
     private lateinit var binding: FragmentPersonalBinding
     private var isExpanded = false
 
+
+    //Initialize Animation
     private val fromBottomFabAnim: Animation by lazy {
         AnimationUtils.loadAnimation(context, R.anim.from_bottom_fab)
     }

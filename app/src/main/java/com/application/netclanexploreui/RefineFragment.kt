@@ -25,6 +25,7 @@ class RefineFragment : Fragment() {
         // Inflate the layout for this fragment
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_refine, container, false)
+        //Setting up the spinner adapter
         val options = arrayOf(
             "Available | Hey Let Us Connect",
             "Away | Stay Discrete And Watch",
@@ -34,6 +35,8 @@ class RefineFragment : Fragment() {
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, options)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         binding.optionsDropDown.adapter = adapter
+
+        //Setting up the text watcher for the input field
         val textWatcher = (object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 binding.inputs.text = binding.inputFieldEditText.text.toString().length.toString()
@@ -49,8 +52,8 @@ class RefineFragment : Fragment() {
         })
         binding.inputFieldEditText.addTextChangedListener(textWatcher)
 
+        //Setting up progress bar logic
         binding.seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
             @SuppressLint("SetTextI18n")
             override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
                 binding.valueLabel.text = progress.toString() + "Km"

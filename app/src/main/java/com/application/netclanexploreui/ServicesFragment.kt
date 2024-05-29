@@ -14,7 +14,7 @@ import com.application.netclanexploreui.databinding.FragmentServicesBinding
 class ServicesFragment : Fragment() {
     private lateinit var binding:FragmentServicesBinding
     private var isExpanded = false
-
+    //Initialize Animation
     private val fromBottomFabAnim: Animation by lazy {
         AnimationUtils.loadAnimation(context, R.anim.from_bottom_fab)
     }
@@ -52,6 +52,7 @@ class ServicesFragment : Fragment() {
     }
 
     @SuppressLint("ResourceAsColor")
+    //Function to shrink and expand fabButton
     private fun shrinkFab(){
         binding.transparentBg.visibility = View.GONE
         binding.mainFabBtn.startAnimation(rotateAntiClockWiseFabAnim)

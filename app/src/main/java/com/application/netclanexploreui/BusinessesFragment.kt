@@ -15,6 +15,7 @@ class BusinessesFragment : Fragment() {
     private lateinit var binding:FragmentBusinessesBinding
     private var isExpanded = false
 
+    //Initialize Animation
     private val fromBottomFabAnim: Animation by lazy {
         AnimationUtils.loadAnimation(context, R.anim.from_bottom_fab)
     }
@@ -42,6 +43,8 @@ class BusinessesFragment : Fragment() {
 
         view?.setFocusableInTouchMode(true)
         view?.requestFocus()
+
+        //Setting up click listener for main fabButton to show animation on click
         binding.mainFabBtn.setOnClickListener {
             if(isExpanded) shrinkFab()
             else expandFab()
@@ -53,6 +56,7 @@ class BusinessesFragment : Fragment() {
 
 
     @SuppressLint("ResourceAsColor")
+    //Function to shrink and expand fabButton
     private fun shrinkFab(){
         binding.transparentBg.visibility = View.GONE
         binding.mainFabBtn.startAnimation(rotateAntiClockWiseFabAnim)
