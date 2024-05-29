@@ -6,7 +6,7 @@
         android:icon="@drawable/baseline_remove_red_eye_24"
         android:title="Explore" />
     <item
-        android:id="@+id/refine"
+        android:id="@+id/refineFragment"
         android:icon="@drawable/baseline_format_indent_increase_24"
         android:title="Refine" />
 </menu>

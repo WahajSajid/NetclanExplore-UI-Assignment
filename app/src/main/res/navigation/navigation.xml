@@ -9,5 +9,14 @@
         android:id="@+id/exploreFragment"
         android:name="com.application.netclanexploreui.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" />
+        tools:layout="@layout/fragment_explore" >
+        <action
+            android:id="@+id/action_exploreFragment_to_refineFragment"
+            app:destination="@id/refineFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/refineFragment"
+        android:name="com.application.netclanexploreui.RefineFragment"
+        android:label="fragment_refine"
+        tools:layout="@layout/fragment_refine" />
 </navigation>

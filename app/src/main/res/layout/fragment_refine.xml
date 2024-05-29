@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RefineFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+
+        <Spinner
+            android:id="@+id/options_dropDown"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTintMode="src_atop"
+            android:elevation="5sp"
+            app:barrierMargin="3dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@color/material_dynamic_primary20" />
+
+        <TextView
+            android:id="@+id/availabilityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Select Your Availability"
+            android:textColor="@color/material_dynamic_primary20"
+            app:layout_constraintBottom_toTopOf="@id/option_box"
+            app:layout_constraintStart_toStartOf="@id/option_box" />
+
+        <View
+            android:id="@+id/option_box"
+            android:layout_width="320dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/rerine_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputField"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            app:boxCornerRadiusBottomEnd="10dp"
+            app:boxCornerRadiusBottomStart="10dp"
+            app:boxCornerRadiusTopEnd="10dp"
+            app:boxCornerRadiusTopStart="10dp"
+            app:boxStrokeColor="@color/material_dynamic_primary20"
+            app:counterTextAppearance="@style/TextAppearance.AppCompat.Body1"
+            app:errorEnabled="true"
+            app:hintAnimationEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/option_box">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/inputFieldEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:imeOptions="flagNoEnterAction"
+                android:inputType="text|textAutoComplete"
+                android:scrollbars="vertical"
+                android:text="Hi community! I am open to new connections 😊" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/addYourStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Add Your Status"
+            android:textColor="@color/material_dynamic_primary20"
+            app:layout_constraintBottom_toTopOf="@id/inputField"
+            app:layout_constraintStart_toStartOf="@id/option_box" />
+
+        <LinearLayout
+            android:id="@+id/counterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@id/inputField"
+            app:layout_constraintTop_toBottomOf="@id/inputField">
+
+            <TextView
+                android:id="@+id/inputs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45" />
+
+            <TextView
+                android:id="@+id/totalInputs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="/250" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/selectText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="Select Hyper local Distance"
+            android:textColor="@color/material_dynamic_primary20"
+            app:layout_constraintStart_toStartOf="@id/inputField"
+            app:layout_constraintTop_toBottomOf="@id/inputField" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="310dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/material_dynamic_primary20"
+            android:max="100"
+            android:min="1"
+            android:progressTint="@color/material_dynamic_primary20"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectText"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/value_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="1 km"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+        <TextView
+            android:id="@+id/selectPurposeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Select Purpose"
+            android:textColor="@color/material_dynamic_primary20"
+            app:layout_constraintStart_toStartOf="@id/seekBar"
+            app:layout_constraintTop_toBottomOf="@id/seekBar" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttonsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/selectPurposeText">
+
+            <Button
+                android:id="@+id/coffeeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Coffee"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/businessButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+            <Button
+                android:id="@+id/businessButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Business"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/hobbiesButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/coffeeButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+            <Button
+                android:id="@+id/hobbiesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/white"
+                android:text="Hobbies"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/businessButton"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+            <Button
+                android:id="@+id/friendshipButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
+                android:text="Friendship"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/coffeeButton"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+
+            <Button
+                android:id="@+id/moviesButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
+                android:text="Movies"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintStart_toEndOf="@id/friendshipButton"
+                app:layout_constraintTop_toBottomOf="@id/businessButton"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+
+            <Button
+                android:id="@+id/diningButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
+                android:text="Dinning"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintStart_toEndOf="@id/moviesButton"
+                app:layout_constraintTop_toBottomOf="@id/hobbiesButton"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+            <Button
+                android:id="@+id/datingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
+                android:text="Dating"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/matrimonyButton"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/friendshipButton"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+
+
+            <Button
+                android:id="@+id/matrimonyButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="@color/white"
+                android:text="Matriomony"
+                android:textColor="@color/material_dynamic_primary20"
+                app:cornerRadius="25sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/datingButton"
+                app:layout_constraintTop_toBottomOf="@id/moviesButton"
+                app:strokeColor="@color/material_dynamic_primary20"
+                app:strokeWidth="1sp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/saveAndExploreButton"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/material_dynamic_primary20"
+            android:text="Save and Explore"
+            app:cornerRadius="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonsLayout"
+            app:strokeColor="@color/material_dynamic_primary20"
+            app:strokeWidth="1sp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
